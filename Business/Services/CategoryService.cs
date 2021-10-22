@@ -1,31 +1,30 @@
 ﻿
-using Business.Interfaces;
+
 using DataAccess.Repositories;
 using Enitites.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Business.Services
 {
-    public class CategoryService : ICategory
+    public class CategoryService
     {
         public CategoryRepository categoryRepository { get; set; }
         private static int count { get; set; }
         public CategoryService()
         {
-            categoryRepository = new CategoryRepository();
+             categoryRepository = new CategoryRepository();
         }
-        
-        
+
+
         public Category Create(Category category)
         {
             try
             {
                 category.SerialId = count;
                 Category isExist =
-                   categoryRepository.Get(c => c.TypeName== category.TypeName);
-                if (isExist != null) 
+                   categoryRepository.Get(c => c.TypeName == category.TypeName);
+                if (isExist != null)
                     return null;
                 categoryRepository.Create(category);
                 count++;
@@ -57,7 +56,7 @@ namespace Business.Services
 
         public List<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return categoryRepository.Getall();
         }
 
         public List<Category> GetAll(int Dose)

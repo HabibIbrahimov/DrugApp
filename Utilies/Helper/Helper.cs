@@ -12,5 +12,18 @@ namespace Utilies.Helper
             Console.WriteLine(message);
             Console.ResetColor();
         }
+
+        public enum Menu
+        {
+            Exit,
+            CreateCategory,
+            UptadeCategory,
+            DeleteCategory,
+            GetCategoryWithSerialId,
+            GetCategoryWithTypeName,
+            GetAllCategory,
+            GetCategoriesWithDose,
+            
+        }
     }
 }

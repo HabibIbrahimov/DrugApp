@@ -1,14 +1,8 @@
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.deps.json
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.runtimeconfig.json
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.runtimeconfig.dev.json
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.exe
 B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
 B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
 B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
 B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\Enitites.dll
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.dll
 B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\Enitites.pdb
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\HomeApp.pdb
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.AssemblyReference.cache
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
@@ -16,6 +10,4 @@ B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\Utilies.dll
-B:\Project C#\HomeApp\DataAccess\bin\Debug\netcoreapp3.1\Utilies.pdb
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete

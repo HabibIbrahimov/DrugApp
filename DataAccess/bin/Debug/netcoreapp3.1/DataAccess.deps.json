@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "DataAccess/1.0.0": {
         "dependencies": {
-          "Enitites": "1.0.0",
-          "HomeApp": "1.0.0"
+          "Enitites": "1.0.0"
         },
         "runtime": {
           "DataAccess.dll": {}
@@ -18,20 +17,6 @@
       "Enitites/1.0.0": {
         "runtime": {
           "Enitites.dll": {}
-        }
-      },
-      "HomeApp/1.0.0": {
-        "dependencies": {
-          "Enitites": "1.0.0",
-          "Utilies": "1.0.0"
-        },
-        "runtime": {
-          "HomeApp.dll": {}
-        }
-      },
-      "Utilies/1.0.0": {
-        "runtime": {
-          "Utilies.dll": {}
         }
       }
     }
@@ -43,16 +28,6 @@
       "sha512": ""
     },
     "Enitites/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "HomeApp/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Utilies/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

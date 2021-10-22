@@ -6,8 +6,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Enitites": "1.0.0",
-          "HomeApp": "1.0.0"
+          "Enitites": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DataAccess.dll": {}
@@ -25,30 +24,6 @@
         "runtime": {
           "bin/placeholder/Enitites.dll": {}
         }
-      },
-      "HomeApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Enitites": "1.0.0",
-          "Utilies": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/HomeApp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/HomeApp.dll": {}
-        }
-      },
-      "Utilies/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Utilies.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Utilies.dll": {}
-        }
       }
     }
   },
@@ -62,22 +37,11 @@
       "type": "project",
       "path": "../Enitites/Enitites.csproj",
       "msbuildProject": "../Enitites/Enitites.csproj"
-    },
-    "HomeApp/1.0.0": {
-      "type": "project",
-      "path": "../HomeApp/HomeApp.csproj",
-      "msbuildProject": "../HomeApp/HomeApp.csproj"
-    },
-    "Utilies/1.0.0": {
-      "type": "project",
-      "path": "../Utilies/Utilies.csproj",
-      "msbuildProject": "../Utilies/Utilies.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DataAccess >= 1.0.0",
-      "Enitites >= 1.0.0"
+      "DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -116,9 +80,6 @@
           "projectReferences": {
             "B:\\Project C#\\HomeApp\\DataAccess\\DataAccess.csproj": {
               "projectPath": "B:\\Project C#\\HomeApp\\DataAccess\\DataAccess.csproj"
-            },
-            "B:\\Project C#\\HomeApp\\Enitites\\Enitites.csproj": {
-              "projectPath": "B:\\Project C#\\HomeApp\\Enitites\\Enitites.csproj"
             }
           }
         }

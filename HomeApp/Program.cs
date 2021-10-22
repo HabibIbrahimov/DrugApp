@@ -1,9 +1,9 @@
 ﻿
 
+using Business.Services;
 using Enitites.Models;
+using HomeApp.Controllers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Utilies.Helper;
 
 
@@ -14,63 +14,63 @@ namespace HomeApp
         private static int typename;
 
         static void Main(string[] args)
+
         {
-            CategoryService categoryService = new CategoryService();
+            CategoryController categoryController = new CategoryController();
             Helper.ChangeTextColor(ConsoleColor.Cyan, "Welcome");
             while (true)
             {
-                Helper.ChangeTextColor(ConsoleColor.White,
-                    "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category with SerialId," +
-                    "5-Get Category with TypeName,6-AllCategory,7-Get Categories with quantity");
-                Helper.ChangeTextColor(ConsoleColor.Yellow, "Selected Option Number:");
+                ShowMenu();
                 string selectedMenu = Console.ReadLine();
                 int menu;
                 bool isTrue = int.TryParse(selectedMenu, out menu);
-                if (isTrue&&menu>=1&&menu<=7)
+                if (isTrue&&menu>=0&&menu<=7)
                 {
                     switch (menu)
                     {
-                        case 1:
-                            Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category typename:");
-                            string TypeName = Console.ReadLine();
-                           EnterName: Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category drug dose");
-                            string dose = Console.ReadLine();
-                            int maxDose;
-                            bool isTrueDose = int.TryParse(dose, out maxDose);
-                            if (isTrueDose)
-                            {
-                                Category category = new Category { TypeName=typename, Dose = maxDose };
-                                
-                            }
-                            else
-                            {
-                                Helper.ChangeTextColor(ConsoleColor.Red, "Enter Correct Size");
-                                goto EnterName;
-                            }
+                        
+                        case (int)Helper.Menu.CreateCategory:
+                            categoryController.Create();
 
                             break;
-                        case 2:
+                        case (int)Helper.Menu.UptadeCategory:
                             break;
-                        case 3:
+                        case (int)Helper.Menu.DeleteCategory:
                             break;
-                        case 4:
+                        case (int)Helper.Menu.GetCategoryWithSerialId:
                             break;
-                        case 5:
+                        case (int)Helper.Menu.GetCategoryWithTypeName:
                             break;
-                        case 6:
+                        case (int)Helper.Menu.GetAllCategory:
+                            categoryController.GetAllCategory();
                             break;
-                        case 7:
+                        case (int)Helper.Menu.GetCategoriesWithDose:
                             break;
-                            
+                        case (int)Helper.Menu.Exit:
+                            break;
                     }
+                }
+                else if (menu==0)
+                {
+                    Helper.ChangeTextColor(ConsoleColor.DarkCyan, "Goodbye");
+                    break;
                 }
                 else
                 {
                     Helper.ChangeTextColor(ConsoleColor.Red, "Please,select correct option");
                 }
-                
+
             }
 
         }
+
+        static void ShowMenu()
+        {
+            Helper.ChangeTextColor(ConsoleColor.White,
+                    "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category With SerialId," +
+                    "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,0-Exit");
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Selected Option Number:");
+        }
     }
+
 }

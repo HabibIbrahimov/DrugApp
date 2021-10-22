@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Enitites": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
       "Enitites/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -25,6 +51,16 @@
     }
   },
   "libraries": {
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
     "Enitites/1.0.0": {
       "type": "project",
       "path": "../Enitites/Enitites.csproj",
@@ -38,7 +74,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Enitites >= 1.0.0",
+      "Business >= 1.0.0",
       "Utilies >= 1.0.0"
     ]
   },
@@ -76,8 +112,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "B:\\Project C#\\HomeApp\\Enitites\\Enitites.csproj": {
-              "projectPath": "B:\\Project C#\\HomeApp\\Enitites\\Enitites.csproj"
+            "B:\\Project C#\\HomeApp\\Business\\Business.csproj": {
+              "projectPath": "B:\\Project C#\\HomeApp\\Business\\Business.csproj"
             },
             "B:\\Project C#\\HomeApp\\Utilies\\Utilies.csproj": {
               "projectPath": "B:\\Project C#\\HomeApp\\Utilies\\Utilies.csproj"
