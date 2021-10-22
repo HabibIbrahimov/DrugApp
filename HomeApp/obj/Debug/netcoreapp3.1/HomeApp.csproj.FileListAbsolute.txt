@@ -1,0 +1,16 @@
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.exe
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.deps.json
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.runtimeconfig.json
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.runtimeconfig.dev.json
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.dll
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\HomeApp.pdb
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.csproj.AssemblyReference.cache
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.GeneratedMSBuildEditorConfig.editorconfig
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.AssemblyInfoInputs.cache
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.AssemblyInfo.cs
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.csproj.CoreCompileInputs.cache
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.dll
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.pdb
+B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.genruntimeconfig.cache
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\Utilies.dll
+B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\Utilies.pdb

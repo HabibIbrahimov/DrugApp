@@ -1,0 +1,10 @@
+B:\Project C#\HomeApp\Enitites\bin\Debug\netcoreapp3.1\Enitites.deps.json
+B:\Project C#\HomeApp\Enitites\bin\Debug\netcoreapp3.1\Enitites.dll
+B:\Project C#\HomeApp\Enitites\bin\Debug\netcoreapp3.1\Enitites.pdb
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.csproj.AssemblyReference.cache
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.GeneratedMSBuildEditorConfig.editorconfig
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.AssemblyInfoInputs.cache
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.AssemblyInfo.cs
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.csproj.CoreCompileInputs.cache
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.dll
+B:\Project C#\HomeApp\Enitites\obj\Debug\netcoreapp3.1\Enitites.pdb
