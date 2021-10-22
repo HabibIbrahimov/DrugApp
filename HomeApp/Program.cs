@@ -36,13 +36,14 @@ namespace HomeApp
                         case (int)Helper.Menu.UptadeCategory:
                             break;
                         case (int)Helper.Menu.DeleteCategory:
+                            categoryController.Delete();
                             break;
                         case (int)Helper.Menu.GetCategoryWithSerialId:
                             break;
                         case (int)Helper.Menu.GetCategoryWithTypeName:
                             break;
                         case (int)Helper.Menu.GetAllCategory:
-                            categoryController.GetAllCategory();
+                            categoryController.GetAll();
                             break;
                         case (int)Helper.Menu.GetCategoriesWithDose:
                             break;

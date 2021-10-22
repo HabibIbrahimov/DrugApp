@@ -41,7 +41,16 @@ namespace Business.Services
 
         public Category Delete(int SerialId)
         {
-            throw new NotImplementedException();
+            Category dbCategory = categoryRepository.Get(c => c.SerialId == SerialId);
+            if(dbCategory != null)
+            {
+                categoryRepository.Delete(dbCategory);
+                return dbCategory;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Category Get(int SerialId)

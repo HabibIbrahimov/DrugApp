@@ -46,7 +46,7 @@ namespace HomeApp.Controllers
 
         }
 
-        public void GetAllCategory()
+        public void GetAll()
         {
             Helper.ChangeTextColor(ConsoleColor.Yellow, "All categories:");
             foreach (Category category in categoryService.GetAll())
@@ -54,7 +54,32 @@ namespace HomeApp.Controllers
                 Helper.ChangeTextColor(ConsoleColor.Green, $"{category.SerialId} - {category.TypeName}");
             }
         }
-
+        public void Delete()
+        {
+            GetAll();
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter group SerialId:");
+            string input = Console.ReadLine();
+            int categorySerialId;
+            bool isTrue = int.TryParse(input, out categorySerialId);
+            if (isTrue)
+            {
+                if (categoryService.Delete(categorySerialId) != null)
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Green, "Category is deleted");
+                    return;
+                }
+                else
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Green, $"{categorySerialId} is not find");
+                    return;
+                }
+            }
+            else
+            {
+                Helper.ChangeTextColor(ConsoleColor.Red, $"Please, selected correct format");
+            }
+            
+        }
 
     }    
 }
