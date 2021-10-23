@@ -11,7 +11,7 @@ namespace HomeApp
 {
     class Program
     {
-        private static int typename;
+        private static string typename;
 
         static void Main(string[] args)
 
@@ -41,11 +41,13 @@ namespace HomeApp
                         case (int)Helper.Menu.GetCategoryWithSerialId:
                             break;
                         case (int)Helper.Menu.GetCategoryWithTypeName:
+                            
                             break;
                         case (int)Helper.Menu.GetAllCategory:
                             categoryController.GetAll();
                             break;
                         case (int)Helper.Menu.GetCategoriesWithDose:
+                            categoryController.GetCategoriesWithDose();
                             break;
                         case (int)Helper.Menu.Exit:
                             break;

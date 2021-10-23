@@ -60,7 +60,7 @@ namespace Business.Services
 
         public Category Get(string TypeName)
         {
-            throw new NotImplementedException();
+           return categoryRepository.Get(c => c.TypeName == TypeName);
         }
 
         public List<Category> GetAll()
@@ -70,7 +70,8 @@ namespace Business.Services
 
         public List<Category> GetAll(int Dose)
         {
-            throw new NotImplementedException();
+            return categoryRepository.Getall(c => c.Dose == Dose);
+            
         }
 
         public Category Uptade(int SerialId, Category category)

@@ -9,7 +9,7 @@ namespace HomeApp.Controllers
 {
     public class CategoryController
     {
-        private static int typename;
+       
         public CategoryService categoryService { get; }
         public CategoryController()
         {
@@ -19,14 +19,14 @@ namespace HomeApp.Controllers
         public void Create()
         {
             Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category typename:");
-            string TypeName = Console.ReadLine();
-        EnterName: Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category drug dose");
+            string typeName = Console.ReadLine();
+            EnterName: Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category drug dose");
             string dose = Console.ReadLine();
             int maxDose;
             bool isTrueDose = int.TryParse(dose, out maxDose);
             if (isTrueDose)
             {
-                Category category = new Category { TypeName = typename, Dose = maxDose };
+                Category category = new Category { TypeName = typeName, Dose = maxDose };
                 if (categoryService.Create(category) != null)
                 {
                     Helper.ChangeTextColor(ConsoleColor.Green, $"{category.TypeName} created");
@@ -57,7 +57,7 @@ namespace HomeApp.Controllers
         public void Delete()
         {
             GetAll();
-            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter group SerialId:");
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter category SerialId:");
             string input = Console.ReadLine();
             int categorySerialId;
             bool isTrue = int.TryParse(input, out categorySerialId);
@@ -70,7 +70,7 @@ namespace HomeApp.Controllers
                 }
                 else
                 {
-                    Helper.ChangeTextColor(ConsoleColor.Green, $"{categorySerialId} is not find");
+                    Helper.ChangeTextColor(ConsoleColor.Red, $"{categorySerialId} is not find");
                     return;
                 }
             }
@@ -80,6 +80,24 @@ namespace HomeApp.Controllers
             }
             
         }
+        public void GetCategoriesWithDose()
+        {
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter category dose:");
+            string input = Console.ReadLine();
+            int Dose;
+            bool isTrue = int.TryParse(input, out Dose);
+            if (isTrue)
+            {
+                Helper.ChangeTextColor(ConsoleColor.Blue, $"Categories which dose is {Dose}:");
+                foreach (var item in categoryService.GetAll(Dose))
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Cyan, item.TypeName);
+                }
+                return;
+            }
+            Helper.ChangeTextColor(ConsoleColor.Red, $"Please, select correct format");
+        }
+       
 
     }    
 }
