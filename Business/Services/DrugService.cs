@@ -33,6 +33,18 @@ namespace Business.Services
                 return null;
             }
         }
+        public List<Drug> GetAll(string categoryName)
+        {
+            Category dbCategory = categoryService.Get(categoryName);
+            if (dbCategory != null)
+            {
+                return drugRepository.Getall(d => d.category.Name == dbCategory.Name);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public Drug Delete(int id)
         {
@@ -45,11 +57,6 @@ namespace Business.Services
         }
 
         public List<Drug> Get(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Drug> GetAll(string categoryName)
         {
             throw new NotImplementedException();
         }

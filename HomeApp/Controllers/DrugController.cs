@@ -34,5 +34,23 @@ namespace HomeApp.Controllers
                 $"Couldn't find such as Category - {categoryName}");
 
         }
+        public void GetAllDrugWithCategory()
+        {
+            Helper.ChangeTextColor(ConsoleColor.Blue, "Select the category you want:");
+            string categoryName = Console.ReadLine();
+            List<Drug> drugs = drugService.GetAll(categoryName);
+            if (drugs != null)
+            {
+                Helper.ChangeTextColor(ConsoleColor.Blue, $"Category {categoryName}:");
+                foreach (var item in drugs)
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Green,
+                    $"{item.SerialId} - {item.Name} {item.Type}");
+                }
+                return;
+            }
+            Helper.ChangeTextColor(ConsoleColor.Red,
+                $"Couldn't find such as Category - {categoryName}");
+        }
     }
 }

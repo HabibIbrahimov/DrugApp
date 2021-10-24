@@ -25,7 +25,7 @@ namespace HomeApp
                 string selectedMenu = Console.ReadLine();
                 int menu;
                 bool isTrue = int.TryParse(selectedMenu, out menu);
-                if (isTrue&&menu>=0&&menu<=8)
+                if (isTrue&&menu>=0&&menu<=9)
                 {
                     switch (menu)
                     {
@@ -54,6 +54,10 @@ namespace HomeApp
                         case (int)Helper.Menu.CreateDrug:
                             categoryController.GetAll();
                             drugController.Create();
+                            break;
+                        case (int)Helper.Menu.GetAllDrugWithCategory:
+                            categoryController.GetAll();
+                            drugController.GetAllDrugWithCategory();
                             break;
                     }
                 }

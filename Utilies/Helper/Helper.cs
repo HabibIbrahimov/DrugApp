@@ -24,6 +24,7 @@ namespace Utilies.Helper
             GetAllCategory,
             GetCategoriesWithDose,
             CreateDrug,
+            GetAllDrugWithCategory
             
         }
     }
