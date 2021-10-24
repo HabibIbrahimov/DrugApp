@@ -77,7 +77,16 @@ namespace Business.Services
 
         public Drug Update(Drug drug, string categoryName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Drug dbDrug = drugRepository.Get(d => d.SerialId == drug.SerialId);
+                dbDrug = drug;
+                return dbDrug;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

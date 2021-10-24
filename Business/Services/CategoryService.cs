@@ -90,8 +90,9 @@ namespace Business.Services
             try
             {
                 Category dbCategory = categoryRepository.Get(t => t.SerialId == category.SerialId);
-                //dbCategory.Name = category.Name;
-                dbCategory = category;
+                dbCategory.Name = category.Name;
+                dbCategory.Dose = category.Dose;
+                
                 return dbCategory;
             }
             catch (Exception)

@@ -35,6 +35,7 @@ namespace HomeApp
 
                             break;
                         case (int)Helper.Menu.UptadeCategory:
+                            categoryController.Uptade();
                             break;
                         case (int)Helper.Menu.DeleteCategory:
                             categoryController.Delete();
