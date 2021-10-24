@@ -11,7 +11,7 @@ namespace Business.Interfaces
         Category Uptade(int SerialId ,Category category);
         Category Delete(int SerialId);
         Category Get(int SerialId);
-        Category Get(string TypeName);
+        Category Get(string Name);
         List<Category> GetAll();
         List<Category> GetAll(int Dose);
     }

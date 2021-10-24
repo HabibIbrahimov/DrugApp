@@ -11,12 +11,13 @@ namespace HomeApp
 {
     class Program
     {
-        private static string typename;
+        //private static string name;
 
         static void Main(string[] args)
 
         {
             CategoryController categoryController = new CategoryController();
+            DrugController drugController = new DrugController();
             Helper.ChangeTextColor(ConsoleColor.Cyan, "Welcome");
             while (true)
             {
@@ -24,7 +25,7 @@ namespace HomeApp
                 string selectedMenu = Console.ReadLine();
                 int menu;
                 bool isTrue = int.TryParse(selectedMenu, out menu);
-                if (isTrue&&menu>=0&&menu<=7)
+                if (isTrue&&menu>=0&&menu<=8)
                 {
                     switch (menu)
                     {
@@ -40,8 +41,7 @@ namespace HomeApp
                             break;
                         case (int)Helper.Menu.GetCategoryWithSerialId:
                             break;
-                        case (int)Helper.Menu.GetCategoryWithTypeName:
-                            
+                        case (int)Helper.Menu.GetCategoryWithName:
                             break;
                         case (int)Helper.Menu.GetAllCategory:
                             categoryController.GetAll();
@@ -50,6 +50,10 @@ namespace HomeApp
                             categoryController.GetCategoriesWithDose();
                             break;
                         case (int)Helper.Menu.Exit:
+                            break;
+                        case (int)Helper.Menu.CreateDrug:
+                            categoryController.GetAll();
+                            drugController.Create();
                             break;
                     }
                 }
@@ -71,7 +75,7 @@ namespace HomeApp
         {
             Helper.ChangeTextColor(ConsoleColor.White,
                     "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category With SerialId," +
-                    "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,0-Exit");
+                    "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,8-Create Drug, 0-Exit");
             Helper.ChangeTextColor(ConsoleColor.Yellow, "Selected Option Number:");
         }
     }

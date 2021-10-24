@@ -23,7 +23,7 @@ namespace Business.Services
             {
                 category.SerialId = count;
                 Category isExist =
-                   categoryRepository.Get(c => c.TypeName == category.TypeName);
+                   categoryRepository.Get(c => c.Name == category.Name);
                 if (isExist != null)
                     return null;
                 categoryRepository.Create(category);
@@ -58,9 +58,9 @@ namespace Business.Services
             throw new NotImplementedException();
         }
 
-        public Category Get(string TypeName)
+        public Category Get(string Name)
         {
-           return categoryRepository.Get(c => c.TypeName == TypeName);
+           return categoryRepository.Get(c => c.Name == Name);
         }
 
         public List<Category> GetAll()

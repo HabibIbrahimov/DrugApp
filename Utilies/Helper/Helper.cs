@@ -20,9 +20,10 @@ namespace Utilies.Helper
             UptadeCategory,
             DeleteCategory,
             GetCategoryWithSerialId,
-            GetCategoryWithTypeName,
+            GetCategoryWithName,
             GetAllCategory,
             GetCategoriesWithDose,
+            CreateDrug,
             
         }
     }

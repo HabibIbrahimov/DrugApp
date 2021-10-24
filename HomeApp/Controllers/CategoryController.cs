@@ -18,18 +18,18 @@ namespace HomeApp.Controllers
 
         public void Create()
         {
-            Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category typename:");
-            string typeName = Console.ReadLine();
+            Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category name:");
+            string name = Console.ReadLine();
             EnterName: Helper.ChangeTextColor(ConsoleColor.Green, "Enter Category drug dose");
             string dose = Console.ReadLine();
             int maxDose;
             bool isTrueDose = int.TryParse(dose, out maxDose);
             if (isTrueDose)
             {
-                Category category = new Category { TypeName = typeName, Dose = maxDose };
+                Category category = new Category { Name = name, Dose = maxDose };
                 if (categoryService.Create(category) != null)
                 {
-                    Helper.ChangeTextColor(ConsoleColor.Green, $"{category.TypeName} created");
+                    Helper.ChangeTextColor(ConsoleColor.Green, $"{category.Name} created");
                     return;
                 }
                 else
@@ -51,7 +51,7 @@ namespace HomeApp.Controllers
             Helper.ChangeTextColor(ConsoleColor.Yellow, "All categories:");
             foreach (Category category in categoryService.GetAll())
             {
-                Helper.ChangeTextColor(ConsoleColor.Green, $"{category.SerialId} - {category.TypeName}");
+                Helper.ChangeTextColor(ConsoleColor.Green, $"{category.SerialId} - {category.Name}");
             }
         }
         public void Delete()
@@ -91,7 +91,7 @@ namespace HomeApp.Controllers
                 Helper.ChangeTextColor(ConsoleColor.Blue, $"Categories which dose is {Dose}:");
                 foreach (var item in categoryService.GetAll(Dose))
                 {
-                    Helper.ChangeTextColor(ConsoleColor.Cyan, item.TypeName);
+                    Helper.ChangeTextColor(ConsoleColor.Cyan, item.Name);
                 }
                 return;
             }
