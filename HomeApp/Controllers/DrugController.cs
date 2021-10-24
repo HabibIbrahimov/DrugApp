@@ -52,5 +52,38 @@ namespace HomeApp.Controllers
             Helper.ChangeTextColor(ConsoleColor.Red,
                 $"Couldn't find such as Category - {categoryName}");
         }
+        public void Delete()
+        {
+            
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter drug SerialId:");
+            string input = Console.ReadLine();
+            int drugSerialId;
+            bool isTrue = int.TryParse(input, out drugSerialId);
+            if (isTrue)
+            {
+                if (drugService.Delete(drugSerialId) != null)
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Green, "Drug is deleted");
+                    return;
+                }
+                else
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Red, $"{drugSerialId} is not find");
+                    return;
+                }
+            }
+            else
+            {
+                Helper.ChangeTextColor(ConsoleColor.Red, $"Please, selected correct format");
+            }
+        }
+        public void GetAll()
+        {
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "All drugs:");
+            foreach (Drug drug in drugService.GetAll())
+            {
+                Helper.ChangeTextColor(ConsoleColor.Green, $"{drug.SerialId} - {drug.Name}");
+            }
+        }
     }
 }

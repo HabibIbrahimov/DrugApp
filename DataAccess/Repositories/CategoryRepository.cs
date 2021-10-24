@@ -69,8 +69,6 @@ namespace DataAccess.Repositories
             {
                 Category dbCategory = Get(d => d.SerialId == entity.SerialId);
                 dbCategory = entity;
-                //dbCategory.TypeName = entity.TypeName;
-                //dbCategory.Dose = entity.Dose;
                 return true;
             }
             catch (Exception)

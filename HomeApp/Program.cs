@@ -79,7 +79,7 @@ namespace HomeApp
         {
             Helper.ChangeTextColor(ConsoleColor.White,
                     "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category With SerialId," +
-                    "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,8-Create Drug, 0-Exit");
+                    "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,8-Create Drug,9-Get All Drug With Category 0-Exit");
             Helper.ChangeTextColor(ConsoleColor.Yellow, "Selected Option Number:");
         }
     }

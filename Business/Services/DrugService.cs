@@ -46,12 +46,21 @@ namespace Business.Services
             }
         }
 
-        public Drug Delete(int id)
+        public Drug Delete(int Serialid)
         {
-            throw new NotImplementedException();
+            Drug dbDrug = drugRepository.Get(d => d.SerialId == Serialid);
+            if (dbDrug != null)
+            {
+                drugRepository.Delete(dbDrug);
+                return dbDrug;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public Drug Get(int id)
+        public Drug Get(int serialid)
         {
             throw new NotImplementedException();
         }
@@ -63,7 +72,7 @@ namespace Business.Services
 
         public List<Drug> GetAll()
         {
-            throw new NotImplementedException();
+            return drugRepository.Getall();
         }
 
         public Drug Update(Drug drug, string categoryName)

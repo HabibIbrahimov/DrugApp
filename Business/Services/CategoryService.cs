@@ -60,7 +60,17 @@ namespace Business.Services
 
         public Category Get(string Name)
         {
-           return categoryRepository.Get(c => c.Name == Name);
+          Category tempalgin=categoryRepository.Get(c => c.Name == Name);
+            
+            if (tempalgin != null)
+            {
+                return tempalgin;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
         public List<Category> GetAll()
@@ -76,7 +86,21 @@ namespace Business.Services
 
         public Category Uptade(int SerialId, Category category)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Category tempalgin = categoryRepository.Get(t => t.SerialId == category.SerialId);
+                tempalgin.Name = category.Name;
+                tempalgin.SerialId = category.SerialId;
+                return tempalgin;
+            }
+            catch (Exception)
+            {
+                  return null; 
+            }
+           
+
         }
+
+       
     }
 }

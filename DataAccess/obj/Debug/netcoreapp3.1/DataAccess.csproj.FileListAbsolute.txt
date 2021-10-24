@@ -10,4 +10,3 @@ B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
-B:\Project C#\HomeApp\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete

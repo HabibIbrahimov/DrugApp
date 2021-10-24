@@ -20,4 +20,3 @@ B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\DataAccess.dll
 B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\Business.pdb
 B:\Project C#\HomeApp\HomeApp\bin\Debug\netcoreapp3.1\DataAccess.pdb
 B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.csproj.AssemblyReference.cache
-B:\Project C#\HomeApp\HomeApp\obj\Debug\netcoreapp3.1\HomeApp.csproj.CopyComplete
