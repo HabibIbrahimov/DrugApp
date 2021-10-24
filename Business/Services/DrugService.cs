@@ -67,7 +67,7 @@ namespace Business.Services
 
         public List<Drug> Get(string name)
         {
-            throw new NotImplementedException();
+            return drugRepository.Getall(d => d.Name.ToLower() == name.ToLower());
         }
 
         public List<Drug> GetAll()

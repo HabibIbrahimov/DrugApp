@@ -1,5 +1,6 @@
 ﻿
 
+using Business.Interfaces;
 using DataAccess.Repositories;
 using Enitites.Models;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Business.Services
 {
-    public class CategoryService
+    public class CategoryService:ICategory
     {
         public CategoryRepository categoryRepository { get; set; }
         private static int count { get; set; }
@@ -60,11 +61,11 @@ namespace Business.Services
 
         public Category Get(string Name)
         {
-          Category tempalgin=categoryRepository.Get(c => c.Name == Name);
+          Category dbCategory = categoryRepository.Get(c => c.Name == Name);
             
-            if (tempalgin != null)
+            if (dbCategory != null)
             {
-                return tempalgin;
+                return dbCategory;
             }
             else
             {
@@ -88,10 +89,10 @@ namespace Business.Services
         {
             try
             {
-                Category tempalgin = categoryRepository.Get(t => t.SerialId == category.SerialId);
-                tempalgin.Name = category.Name;
-                tempalgin.SerialId = category.SerialId;
-                return tempalgin;
+                Category dbCategory = categoryRepository.Get(t => t.SerialId == category.SerialId);
+                //dbCategory.Name = category.Name;
+                dbCategory = category;
+                return dbCategory;
             }
             catch (Exception)
             {

@@ -97,7 +97,40 @@ namespace HomeApp.Controllers
             }
             Helper.ChangeTextColor(ConsoleColor.Red, $"Please, select correct format");
         }
-       
+        public void Uptade()
+        {
+        Name: Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter  category SerialId:");
+            string SerialID = Console.ReadLine();
+            int serialid;
+            bool isTrue = int.TryParse(SerialID, out serialid);
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter new category:");
+            string name = Console.ReadLine();
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter Category new max drug dose:");
+            string dose = Console.ReadLine();
+            int maxDose;
+            bool isTrueSize = int.TryParse(dose, out maxDose);
+            if (isTrueSize && isTrue)
+            {
+                Category category = new Category { Name = name, Dose = maxDose };
+                if (category != null)
+                {
+                    categoryService.Uptade(serialid, category);
+
+                }
+                else
+                {
+                    Helper.ChangeTextColor(ConsoleColor.Red, "Something is wrong!!!");
+                    return;
+                }
+            }
+            else
+            {
+                Helper.ChangeTextColor(ConsoleColor.Red, "Enter Correct Category Dose or SerialId");
+                goto Name;
+            }
+
+        }
+
 
     }    
 }
