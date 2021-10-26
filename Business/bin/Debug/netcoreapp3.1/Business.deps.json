@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "Business/1.0.0": {
         "dependencies": {
-          "DataAccess": "1.0.0"
+          "DataAccess": "1.0.0",
+          "Utilies": "1.0.0"
         },
         "runtime": {
           "Business.dll": {}
@@ -26,6 +27,11 @@
         "runtime": {
           "Enitites.dll": {}
         }
+      },
+      "Utilies/1.0.0": {
+        "runtime": {
+          "Utilies.dll": {}
+        }
       }
     }
   },
@@ -41,6 +47,11 @@
       "sha512": ""
     },
     "Enitites/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Utilies/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

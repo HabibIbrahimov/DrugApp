@@ -5,6 +5,7 @@ using DataAccess.Repositories;
 using Enitites.Models;
 using System;
 using System.Collections.Generic;
+using Utilies.Exceptions;
 
 namespace Business.Services
 {
@@ -36,7 +37,7 @@ namespace Business.Services
             catch (Exception)
             {
 
-                return null;
+                throw new DrugException("null");
             }
         }
 
@@ -97,7 +98,7 @@ namespace Business.Services
             }
             catch (Exception)
             {
-                  return null; 
+                throw new DrugException("null");
             }
            
 

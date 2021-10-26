@@ -35,6 +35,9 @@
             "projectReferences": {
               "B:\\Project C#\\HomeApp\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "B:\\Project C#\\HomeApp\\DataAccess\\DataAccess.csproj"
+              },
+              "B:\\Project C#\\HomeApp\\Utilies\\Utilies.csproj": {
+                "projectPath": "B:\\Project C#\\HomeApp\\Utilies\\Utilies.csproj"
               }
             }
           }

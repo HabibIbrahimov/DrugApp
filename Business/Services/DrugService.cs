@@ -4,6 +4,7 @@ using Enitites.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilies.Exceptions;
 
 namespace Business.Services
 {
@@ -48,16 +49,26 @@ namespace Business.Services
 
         public Drug Delete(int Serialid)
         {
-            Drug dbDrug = drugRepository.Get(d => d.SerialId == Serialid);
-            if (dbDrug != null)
+            try
             {
-                drugRepository.Delete(dbDrug);
-                return dbDrug;
+                Drug dbDrug = drugRepository.Get(d => d.SerialId == Serialid);
+                if (dbDrug != null)
+                {
+                    drugRepository.Delete(dbDrug);
+                    return dbDrug;
+                }
+                else
+                {
+                    throw new DrugException("null");
+                }
             }
-            else
+            catch (DrugException)
             {
-                return null;
+
+                throw new DrugException("null");
             }
+            
+            
         }
 
         public Drug Get(int serialid)
@@ -83,9 +94,9 @@ namespace Business.Services
                 dbDrug = drug;
                 return dbDrug;
             }
-            catch (Exception)
+            catch (DrugException)
             {
-                return null;
+                throw new DrugException("dbDrug is null");
             }
         }
     }
