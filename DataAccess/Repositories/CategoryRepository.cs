@@ -67,7 +67,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                Category dbCategory = Get(d => d.SerialId == entity.SerialId);
+                Category dbCategory = Get(d => d.Id == entity.Id);
                 dbCategory = entity;
                 return true;
             }

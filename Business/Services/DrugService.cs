@@ -24,7 +24,7 @@ namespace Business.Services
             if (dbCategory != null)
             {
                 drug.category = dbCategory;
-                drug.SerialId = count;
+                drug.Id = count;
                 drugRepository.Create(drug);
                 count++;
                 return drug;
@@ -39,7 +39,7 @@ namespace Business.Services
             Category dbCategory = categoryService.Get(categoryName);
             if (dbCategory != null)
             {
-                return drugRepository.Getall(d => d.category.Name == dbCategory.Name);
+                return drugRepository.Getall(d => d.category.Name.ToLower() == dbCategory.Name.ToLower());
             }
             else
             {
@@ -47,11 +47,11 @@ namespace Business.Services
             }
         }
 
-        public Drug Delete(int Serialid)
+        public Drug Delete(int id)
         {
             try
             {
-                Drug dbDrug = drugRepository.Get(d => d.SerialId == Serialid);
+                Drug dbDrug = drugRepository.Get(d => d.Id == id);
                 if (dbDrug != null)
                 {
                     drugRepository.Delete(dbDrug);
@@ -59,21 +59,23 @@ namespace Business.Services
                 }
                 else
                 {
-                    throw new DrugException("null");
+                    Console.WriteLine(DrugException.DrugcategoryNotcreate);
+                    return default;
                 }
             }
             catch (DrugException)
             {
 
-                throw new DrugException("null");
+                Console.WriteLine(DrugException.DrugcategoryNotcreate);
+                return default;
             }
             
             
         }
 
-        public Drug Get(int serialid)
+        public Drug Get(int id)
         {
-            throw new NotImplementedException();
+           return drugRepository.Get(d => d.Id == id);
         }
 
         public List<Drug> Get(string name)
@@ -86,17 +88,18 @@ namespace Business.Services
             return drugRepository.Getall();
         }
 
-        public Drug Update(Drug drug, string categoryName)
+        public Drug Update(Drug drug, string category)
         {
             try
             {
-                Drug dbDrug = drugRepository.Get(d => d.SerialId == drug.SerialId);
+                Drug dbDrug = drugRepository.Get(d => d.Id == drug.Id);
                 dbDrug = drug;
                 return dbDrug;
             }
             catch (DrugException)
             {
-                throw new DrugException("dbDrug is null");
+                Console.WriteLine(DrugException.DrugcategoryNotcreate);
+                return default;
             }
         }
     }

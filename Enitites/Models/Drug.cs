@@ -7,7 +7,7 @@ namespace Enitites.Models
 {
    public class Drug:IEntity
     {
-        public int SerialId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public Category category { get; set; }

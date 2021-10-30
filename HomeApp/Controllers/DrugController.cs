@@ -27,7 +27,7 @@ namespace HomeApp.Controllers
             if (newDru !=null)
             {
                 Helper.ChangeTextColor(ConsoleColor.Green, 
-                    $"New Drug is Created - {newDru.Name} {newDru.Type}");
+                    $"New Drug is Created - {newDru.Name.ToLower()} {newDru.Type}");
                 return;
             }
             Helper.ChangeTextColor(ConsoleColor.Red, 
@@ -45,7 +45,7 @@ namespace HomeApp.Controllers
                 foreach (var item in drugs)
                 {
                     Helper.ChangeTextColor(ConsoleColor.Green,
-                    $"{item.SerialId} - {item.Name} {item.Type}");
+                    $"{item.Id} - {item.Name.ToLower()} {item.Type}");
                 }
                 return;
             }
@@ -55,20 +55,20 @@ namespace HomeApp.Controllers
         public void Delete()
         {
             
-            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter drug SerialId:");
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter drug Id:");
             string input = Console.ReadLine();
-            int drugSerialId;
-            bool isTrue = int.TryParse(input, out drugSerialId);
+            int drugId;
+            bool isTrue = int.TryParse(input, out drugId);
             if (isTrue)
             {
-                if (drugService.Delete(drugSerialId) != null)
+                if (drugService.Delete(drugId) != null)
                 {
                     Helper.ChangeTextColor(ConsoleColor.Green, "Drug is deleted");
                     return;
                 }
                 else
                 {
-                    Helper.ChangeTextColor(ConsoleColor.Red, $"{drugSerialId} is not find");
+                    Helper.ChangeTextColor(ConsoleColor.Red, $"{drugId} is not find");
                     return;
                 }
             }
@@ -82,7 +82,7 @@ namespace HomeApp.Controllers
             Helper.ChangeTextColor(ConsoleColor.Yellow, "All drugs:");
             foreach (Drug drug in drugService.GetAll())
             {
-                Helper.ChangeTextColor(ConsoleColor.Green, $"{drug.SerialId} - {drug.Name}");
+                Helper.ChangeTextColor(ConsoleColor.Green, $"{drug.Id} - {drug.Name}");
             }
         }
     }

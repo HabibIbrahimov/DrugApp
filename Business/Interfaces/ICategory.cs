@@ -8,9 +8,9 @@ namespace Business.Interfaces
    public interface ICategory
     {
         Category Create(Category category);
-        Category Uptade(int SerialId ,Category category);
-        Category Delete(int SerialId);
-        Category Get(int SerialId);
+        Category Uptade(int Id ,Category category);
+        Category Delete(int Id);
+        Category Get(int Id);
         Category Get(string Name);
         List<Category> GetAll();
         List<Category> GetAll(int Dose);

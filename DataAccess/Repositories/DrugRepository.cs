@@ -68,10 +68,8 @@ namespace DataAccess.Repositories
         {
             try
             {
-                Drug dbDrug = Get(d => d.SerialId == entity.SerialId);
+                Drug dbDrug = Get(d => d.Id == entity.Id);
                 dbDrug = entity;
-                //dbDrug.Name = entity.Name;
-                //dbDrug.Price = entity.Price;
                 return true;
             }
             catch (Exception)

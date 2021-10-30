@@ -6,7 +6,7 @@ namespace Enitites.Interfaces
 {
     public interface IEntity
     {
-        public int SerialId { get; set; }
+        public int Id { get; set; }
         
     }
 }

@@ -11,8 +11,6 @@ namespace HomeApp
 {
     class Program
     {
-        //private static string name;
-
         static void Main(string[] args)
 
         {
@@ -40,7 +38,7 @@ namespace HomeApp
                         case (int)Helper.Menu.DeleteCategory:
                             categoryController.Delete();
                             break;
-                        case (int)Helper.Menu.GetCategoryWithSerialId:
+                        case (int)Helper.Menu.GetCategoryWithId:
                             break;
                         case (int)Helper.Menu.GetCategoryWithName:
                             break;
@@ -79,7 +77,7 @@ namespace HomeApp
         static void ShowMenu()
         {
             Helper.ChangeTextColor(ConsoleColor.White,
-                    "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category With SerialId," +
+                    "1-Create Category,2-Uptade Category,3-Delete Category,4-Get Category With Id," +
                     "5-Get Category With TypeName,6-Get All Category,7-Get Categories With Dose,8-Create Drug,9-Get All Drug With Category 0-Exit");
             Helper.ChangeTextColor(ConsoleColor.Yellow, "Selected Option Number:");
         }

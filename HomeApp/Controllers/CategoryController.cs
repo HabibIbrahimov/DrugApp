@@ -51,26 +51,26 @@ namespace HomeApp.Controllers
             Helper.ChangeTextColor(ConsoleColor.Yellow, "All categories:");
             foreach (Category category in categoryService.GetAll())
             {
-                Helper.ChangeTextColor(ConsoleColor.Green, $"{category.SerialId} - {category.Name}");
+                Helper.ChangeTextColor(ConsoleColor.Green, $"{category.Id} - {category.Name}");
             }
         }
         public void Delete()
         {
             GetAll();
-            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter category SerialId:");
+            Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter category Id:");
             string input = Console.ReadLine();
-            int categorySerialId;
-            bool isTrue = int.TryParse(input, out categorySerialId);
+            int categoryId;
+            bool isTrue = int.TryParse(input, out categoryId);
             if (isTrue)
             {
-                if (categoryService.Delete(categorySerialId) != null)
+                if (categoryService.Delete(categoryId) != null)
                 {
                     Helper.ChangeTextColor(ConsoleColor.Green, "Category is deleted");
                     return;
                 }
                 else
                 {
-                    Helper.ChangeTextColor(ConsoleColor.Red, $"{categorySerialId} is not find");
+                    Helper.ChangeTextColor(ConsoleColor.Red, $"{categoryId} is not find");
                     return;
                 }
             }
@@ -99,10 +99,10 @@ namespace HomeApp.Controllers
         }
         public void Uptade()
         {
-        Name: Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter  category SerialId:");
-            string SerialID = Console.ReadLine();
-            int serialid;
-            bool isTrue = int.TryParse(SerialID, out serialid);
+        Name: Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter  category Id:");
+            string ID = Console.ReadLine();
+            int id;
+            bool isTrue = int.TryParse(ID, out id);
             Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter new category:");
             string name = Console.ReadLine();
             Helper.ChangeTextColor(ConsoleColor.Yellow, "Enter Category new max drug dose:");
@@ -112,9 +112,11 @@ namespace HomeApp.Controllers
             if (isTrueSize && isTrue)
             {
                 Category category = new Category { Name = name, Dose = maxDose };
-                if (category != null)
+                if (categoryService.Uptade(id, category) != null)
                 {
-                    categoryService.Uptade(serialid, category);
+                    
+                    Helper.ChangeTextColor(ConsoleColor.Green, "Uptade Succes full:");
+
 
                 }
                 else
@@ -125,7 +127,7 @@ namespace HomeApp.Controllers
             }
             else
             {
-                Helper.ChangeTextColor(ConsoleColor.Red, "Enter Correct Category Dose or SerialId");
+                Helper.ChangeTextColor(ConsoleColor.Red, "Enter Correct Category Dose or Id");
                 goto Name;
             }
 

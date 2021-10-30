@@ -23,9 +23,9 @@ namespace Business.Services
         {
             try
             {
-                category.SerialId = count;
+                category.Id = count;
                 Category isExist =
-                   categoryRepository.Get(c => c.Name == category.Name);
+                   categoryRepository.Get(c => c.Name.ToLower() == category.Name.ToLower());
                 if (isExist != null)
                     return null;
                 categoryRepository.Create(category);
@@ -34,16 +34,17 @@ namespace Business.Services
 
 
             }
-            catch (Exception)
+            catch (DrugException)
             {
 
-                throw new DrugException("null");
+                Console.WriteLine(DrugException.DrugcategoryNotcreate);
+                return default;
             }
         }
 
-        public Category Delete(int SerialId)
+        public Category Delete(int id)
         {
-            Category dbCategory = categoryRepository.Get(c => c.SerialId == SerialId);
+            Category dbCategory = categoryRepository.Get(c => c.Id == id);
             if(dbCategory != null)
             {
                 categoryRepository.Delete(dbCategory);
@@ -55,14 +56,14 @@ namespace Business.Services
             }
         }
 
-        public Category Get(int SerialId)
+        public Category Get(int id)
         {
-            throw new NotImplementedException();
+           return categoryRepository.Get(c => c.Id == id);
         }
 
         public Category Get(string Name)
         {
-          Category dbCategory = categoryRepository.Get(c => c.Name == Name);
+          Category dbCategory = categoryRepository.Get(c => c.Name.ToLower() == Name.ToLower());
             
             if (dbCategory != null)
             {
@@ -86,19 +87,24 @@ namespace Business.Services
             
         }
 
-        public Category Uptade(int SerialId, Category category)
+        public Category Uptade(int id, Category category)
         {
             try
             {
-                Category dbCategory = categoryRepository.Get(t => t.SerialId == category.SerialId);
-                dbCategory.Name = category.Name;
-                dbCategory.Dose = category.Dose;
-                
-                return dbCategory;
+                Category dbCategory = categoryRepository.Get(c => c.Id == id);
+                if (dbCategory != null)
+                {
+                    dbCategory.Name = category.Name;
+                    dbCategory.Dose = category.Dose;
+                    return dbCategory;
+
+                }
+                return null;
+
             }
-            catch (Exception)
+            catch (DrugException)
             {
-                throw new DrugException("null");
+                return null;
             }
            
 

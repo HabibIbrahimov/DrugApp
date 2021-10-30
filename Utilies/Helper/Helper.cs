@@ -19,7 +19,7 @@ namespace Utilies.Helper
             CreateCategory,
             UptadeCategory,
             DeleteCategory,
-            GetCategoryWithSerialId,
+            GetCategoryWithId,
             GetCategoryWithName,
             GetAllCategory,
             GetCategoriesWithDose,
