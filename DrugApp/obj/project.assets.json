@@ -87,9 +87,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Project C#\\HomeApp\\HomeApp\\HomeApp.csproj",
-      "projectName": "HomeApp",
-      "projectPath": "B:\\Project C#\\HomeApp\\HomeApp\\HomeApp.csproj",
+      "projectUniqueName": "B:\\Project C#\\HomeApp\\HomeApp\\DrugApp.csproj",
+      "projectName": "DrugApp",
+      "projectPath": "B:\\Project C#\\HomeApp\\HomeApp\\DrugApp.csproj",
       "packagesPath": "C:\\Users\\ihebi\\.nuget\\packages\\",
       "outputPath": "B:\\Project C#\\HomeApp\\HomeApp\\obj\\",
       "projectStyle": "PackageReference",
